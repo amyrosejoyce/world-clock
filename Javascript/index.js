@@ -5,7 +5,7 @@ function timeRefreash() {
 
   losAngelesTimeElement.innerHTML = moment()
     .tz("America/Los_Angeles")
-    .format("hh:mm:ss A");
+    .format("hh:mm:ss [<small>]A[</small]");
 
   losAngelesDateElement.innerHTML = moment()
     .tz("America/Los_Angeles")
@@ -15,7 +15,9 @@ function timeRefreash() {
   let parisDateElement = document.querySelector("#paris .date");
   let parisTimeElement = document.querySelector("#paris .time");
 
-  parisTimeElement.innerHTML = moment().tz("Europe/Paris").format("hh:mm:ss A");
+  parisTimeElement.innerHTML = moment()
+    .tz("Europe/Paris")
+    .format("hh:mm:ss [<small>]A[</small]");
 
   parisDateElement.innerHTML = moment()
     .tz("Europe/Paris")
