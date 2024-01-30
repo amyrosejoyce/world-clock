@@ -26,19 +26,20 @@ function timeRefreash() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
 
   let citiesSelectElement = document.querySelector("#cities");
   citiesSelectElement.innerHTML = ` <div class="city">
           <div>
-            <h2>${cityTimeZone}</h2>
+            <h2>${cityName}</h2>
             <div class="date">${cityTime.format("dddd,MMM D,YYYY")}</div>
           </div>
           <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}
         </div> `;
 }
+timeRefreash();
+setInterval(timeRefreash, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
-
-setInterval(timeRefreash, 1000);
