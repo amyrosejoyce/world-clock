@@ -5,7 +5,7 @@ function timeRefreash() {
 
   losAngelesTimeElement.innerHTML = moment()
     .tz("America/Los_Angeles")
-    .format("hh:mm:ss [<small>]A[</small]");
+    .format("hh:mm:ss [<small>]A[</small>]");
 
   losAngelesDateElement.innerHTML = moment()
     .tz("America/Los_Angeles")
@@ -17,7 +17,7 @@ function timeRefreash() {
 
   parisTimeElement.innerHTML = moment()
     .tz("Europe/Paris")
-    .format("hh:mm:ss [<small>]A[</small]");
+    .format("hh:mm:ss [<small>]A[</small>]");
 
   parisDateElement.innerHTML = moment()
     .tz("Europe/Paris")
@@ -27,20 +27,18 @@ function timeRefreash() {
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `
-  <div class="city" id="los-angeles">
+
+  let citiesSelectElement = document.querySelector("#cities");
+  citiesSelectElement.innerHTML = ` <div class="city">
           <div>
             <h2>${cityTimeZone}</h2>
-            <div class=${format("dddd,MMM D,YYYY")}
+            <div class="date">${cityTime.format("dddd,MMM D,YYYY")}</div>
           </div>
-          <div class=${("hh:mm:ss [<small>]A[</small]");><small>AM</small>}</div>`;
-              
+          <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}
+        </div> `;
 }
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
-
-
 
 setInterval(timeRefreash, 1000);
