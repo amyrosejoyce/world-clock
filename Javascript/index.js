@@ -22,6 +22,18 @@ function timeRefreash() {
   parisDateElement.innerHTML = moment()
     .tz("Europe/Paris")
     .format("dddd,MMM D,YYYY");
+
+  let sydneyElement = document.querySelector("#sydney");
+  let sydneyDateElement = document.querySelector("#sydney .date");
+  let sydneyTimeElement = document.querySelector("#sydney .time");
+
+  sydneyTimeElement.innerHTML = moment()
+    .tz("Australia/Sydney")
+    .format("hh:mm:ss [<small>]A[</small>]");
+
+  sydneyDateElement.innerHTML = moment()
+    .tz("Australia/Sydney")
+    .format("dddd,MMM D,YYYY");
 }
 
 function updateCity(event) {
@@ -42,6 +54,7 @@ function updateCity(event) {
           <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}
         </div> `;
 }
+
 timeRefreash();
 setInterval(timeRefreash, 1000);
 

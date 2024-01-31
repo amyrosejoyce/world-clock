@@ -1,16 +1,16 @@
 body {
   background-color: #f6f4fd;
+  font-family: sans-serif;
 }
 
 .container {
   max-width: 500px;
   margin: 30px auto;
-  border: 2px solid rgb(13, 13, 14);
+  border: 1px solid rgb(13, 13, 14);
   border-radius: 10px;
   padding: 10px;
-  background: rgb(225, 231, 231);
-  box-shadow: 10px 10px 10px grey;
-  font-family: sans-serif;
+  background: rgb(171, 215, 244);
+  box-shadow: 5px 5px 5px grey;
 }
 
 h1 {
@@ -23,7 +23,7 @@ select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 h2 {
@@ -32,9 +32,11 @@ h2 {
 }
 
 .city {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px dotted grey;
 }
 .date {
   opacity: 0.7;
